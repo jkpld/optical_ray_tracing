@@ -1,0 +1,119 @@
+// Format of the file ========================
+// ===========================================
+//
+// NOTE, The x axis should be taken as the optical axis when creating this file
+// All values are required to be given in units of millimeters
+//
+//
+// Manufacturer:
+// ID:
+// Type:
+// SubType:
+// crossSection:
+// crossSectionSize:
+// clearAperture: %
+// f: % Focal length
+// fb: % back focal length
+// NA: % numerical aperture
+// Price:
+// DateOfInformation: % the date which this information was retrieved
+// edgeThickness: %thickness of edge of lens
+// numberOfSurfaces:
+// Surface
+//    material:
+//    surfaceType: {sphere, cone, cylinder, asphere, plane, aperture, parabola}
+//    ===== if spherical, then ====
+//    R: % radius of curvature
+//	  apex: x y z % Point of apex --- note that if (y,z) is not inside the crossSectionSize then the surface will not be created correctly.
+//    ===== if cone, then ====
+//    A: % angle
+//	  apex: x y z % Point of apex
+//    ===== if cylinder, then ===
+//    R: % radius of curvature
+//    apexAxis: % axis of apex line
+//    ===== if aspheric, then ===
+//	  apex: x y z % Point of apex
+//    R: % radius
+//    conic: % conic number
+//    2nd: % order coeff
+//    4th: % order coeff
+//    6th: % order coeff
+//    8th: % order coeff
+//    10th: % order coeff
+//    12th: % order coeff
+//    14th: % order coeff
+//    16th: % order coeff
+//    ===== if plane, then ===
+//    point: x y z % point on the plane
+//    normVec: % normal vector of plane
+//    ===== if aperture, then ===
+//	  shape: % shape of aperture {circle, rectangle}
+//	  center: x y z % center point of acceptance region
+//	  normVec: % normal vector of the plane the aperture is defined on
+//    ===== if parabola, then ===
+//    PFL: % parent focal length
+//    EFL: % effective focal length, or reflection focal length
+//    Angle: % The reflection angle of the parabola (in degrees)
+// 	  baseDist: % The distance along the optical axis between the focal point and the Center.
+//    ===== if backSurface, then ===
+//    point: x y z % point on the plane
+//    normVec: % normal vector of plane
+//
+// end Surface
+// .
+// .
+// .
+// Surface
+// .
+// .
+// .
+// end Surface
+//
+// ============================================
+// ============================================
+// Note the equation of the asphere is
+// z = r^2/(R * ( 1 + sqrt( 1 - (1+k)*r^2/R^2) )) + A2*r^2 + A4*r^4 + A6*r^6 + A8*r^8 + A10*r^10 + A12*r^12 + A14*r^14 + A16*r^16
+// where r is the distance perpendicular to the optical axis
+// R is the primary radius of the asphere
+// k is the conic section
+// A2...A16 are the coefficients of the asphere
+//
+// =============================================
+// =============================================
+Manufacturer: Edmund Optics
+ID: #48-536
+Type: Lens
+SubType: Asphere
+crossSection: circle
+crossSectionSize: 25
+clearAperture: 22.5
+f: 25
+fb: 18.31
+NA: 0.5
+Price: 450
+DateOfInformation: 20151021
+edgeThickness: 1.75
+numberOfSurfaces: 2
+//
+Surface
+material: FusedSilica
+surfaceType: asphere
+apex: 0 0 0
+R: 11.462
+conic: -1.661221569159
+2nd: 0
+4th: 9.167421464497E-5
+6th: -7.166361952686E-8
+8th: 3.556473766174E-10
+10th: -1.041048498674E-13
+12th: 0
+14th: 0
+16th: 0
+end Surface
+//
+Surface
+material: air
+surfaceType: plane
+point: -9.75 0 0
+normVec: -1 0 0
+end Surface

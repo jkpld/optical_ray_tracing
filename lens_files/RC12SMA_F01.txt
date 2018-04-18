@@ -1,0 +1,150 @@
+// Format of the file ========================
+// ===========================================
+//
+// NOTE, The x axis should be taken as the optical axis when creating this file
+// All values are required to be given in units of millimeters
+//
+//
+// Manufacturer:
+// ID:
+// Type:
+// SubType:
+// crossSection:
+// crossSectionSize:
+// clearAperture: %
+// f: % Focal length
+// fb: % back focal length
+// NA: % numerical aperture
+// Price:
+// DateOfInformation: % the date which this information was retrieved
+// edgeThickness: %thickness of edge of lens
+// numberOfSurfaces:
+// Surface
+//    material:
+//    surfaceType: {sphere, cone, cylinder, asphere, plane, aperture, parabola}
+//    ===== if spherical, then ====
+//    R: % radius of curvature
+//	  apex: x y z % Point of apex --- note that if (y,z) is not inside the crossSectionSize then the surface will not be created correctly.
+//    ===== if cone, then ====
+//    A: % angle
+//	  apex: x y z % Point of apex
+//    normVec: % normal vector of cone (the vector the cone is symmetric about)
+//    ===== if cylinder, then ===
+//    R: % radius of curvature
+//    apexAxis: % axis of apex line
+//    ===== if aspheric, then ===
+//	  apex: x y z % Point of apex
+//    R: % radius
+//    conic: % conic number
+//    2nd: % order coeff
+//    4th: % order coeff
+//    6th: % order coeff
+//    8th: % order coeff
+//    10th: % order coeff
+//    12th: % order coeff
+//    14th: % order coeff
+//    16th: % order coeff
+//    ===== if plane, then ===
+//    point: x y z % point on the plane
+//    normVec: % normal vector of plane
+//    ===== if aperture, then ===
+//	  shape: % shape of aperture {circle, rectangle}
+//	  center: x y z % center point of acceptance region
+//	  normVec: % normal vector of the plane the aperture is defined on
+//	  Extent: % size of aperture
+//    ===== if parabola, then ===
+//    PFL: % parent focal length
+//    EFL: % effective focal length, or reflection focal length
+//    Angle: % The reflection angle of the parabola (in degrees)
+// 	  baseDist: % The distance along the optical axis between the focal point and the Center.
+//    ===== if backSurface, then ===
+//    point: x y z % point on the plane
+//    normVec: % normal vector of plane
+//
+// end Surface
+// .
+// .
+// .
+// Surface
+// .
+// .
+// .
+// end Surface
+//
+// ============================================
+// ============================================
+// Note the equation of the asphere is
+// z = r^2/(R * ( 1 + sqrt( 1 - (1+k)*r^2/R^2) )) + A2*r^2 + A4*r^4 + A6*r^6 + A8*r^8 + A10*r^10 + A12*r^12 + A14*r^14 + A16*r^16
+// where r is the distance perpendicular to the optical axis
+// R is the primary radius of the asphere
+// k is the conic section
+// A2...A16 are the coefficients of the asphere
+//
+// =============================================
+// =============================================
+Manufacturer: ThorLabs
+ID: RC12SMA-F01
+Type: Mirror
+SubType: Parabolic
+crossSection: circle
+crossSectionSize: 25.4
+clearAperture: 22.5
+f: 50.8
+fb:
+NA: 0.216
+Price: 946
+DateOfInformation: 20160118
+edgeThickness: 31.7
+numberOfSurfaces: 5
+//
+Surface
+material: none
+surfaceType: aperture
+shape: circle
+center: 30.5 0 0
+normVec: 1 0 0
+Extent: 11
+end Surface
+//
+Surface
+material: Al
+surfaceType: parabola
+PFL: 25.4
+EFL: 50.8
+Angle: 90
+baseDist: 0
+end Surface
+//
+Surface
+material: Al
+surfaceType: backSurface
+point: -17.46 0 0
+normVec: 1 0 0
+end Surface
+//
+Surface
+material: none
+surfaceType: aperture
+shape: circle
+center: 0 13.5 0
+normVec: 0 1 0
+Extent: 8.87
+end Surface
+//
+Surface
+material: none
+surfaceType: aperture
+shape: circle
+center: 0 38.3 0
+normVec: 0 1 0
+Extent: 4.5
+end Surface
+//
+//Surface
+//material: none
+//surfaceType: aperture
+//shape: circle
+//center: 0 50.8 0
+//normVec: 0 1 0
+//Extent: 0.025
+//end Surface

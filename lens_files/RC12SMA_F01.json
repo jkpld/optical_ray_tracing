@@ -1,0 +1,55 @@
+{
+"Manufacturer":"ThorLabs",
+"ID":"RC12SMA-F01",
+"Type":"Mirror",
+"SubType":"Parabolic",
+"crossSection":"circle",
+"crossSectionSize":25.4,
+"clearAperture":22.5,
+"f":50.8,
+"fb":null,
+"NA":0.216,
+"Price":946,
+"DateOfInformation":20160118,
+"edgeThickness":null,
+"Surfaces":[
+  {
+    "material":null,
+    "surfaceType": "aperture",
+    "shape": "circle",
+    "center": [30.5, 0, 0],
+    "normVec": [1, 0, 0],
+    "Extent": 11
+  },
+  {
+    "material": "Al",
+    "surfaceType": "parabola",
+    "PFL": 25.4,
+    "EFL": 50.8,
+    "Angle": 90,
+    "baseDist": 0
+  },
+  {
+    "material": "Al",
+    "surfaceType": "backSurface",
+    "point": [-17.46, 0, 0],
+    "normVec": [1, 0, 0]
+  },
+  {
+    "material": null,
+    "surfaceType": "aperture",
+    "shape": "circle",
+    "center": [0, 13.5, 0],
+    "normVec": [0, 1, 0],
+    "Extent": 8.87
+  },
+  {
+    "material": null,
+    "surfaceType": "aperture",
+    "shape": "circle",
+    "center": [0, 38.3, 0],
+    "normVec": [0, 1, 0],
+    "Extent": 4.5
+  }
+]
+}

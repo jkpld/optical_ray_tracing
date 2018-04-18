@@ -1,0 +1,31 @@
+{
+"Manufacturer":"Edmund Optics",
+"ID":"#48-533",
+"Type":"Lens",
+"SubType":"Asphere",
+"crossSection":"circle",
+"crossSectionSize":25,
+"clearAperture":22.5,
+"f":25,
+"fb":18.31,
+"NA":0.5,
+"Price":450,
+"DateOfInformation":20151021,
+"edgeThickness":1.75,
+"Surfaces":[
+  {
+    "material":"FusedSilica",
+    "surfaceType":"asphere",
+    "apex":[0, 0, 0],
+    "R":11.462,
+    "conic":-1.661221569159,
+    "coeffs":[0, 9.167421464497E-5, -7.166361952686E-8, 3.556473766174E-10, -1.041048498674E-13, 0, 0, 0]
+  },
+  {
+    "material":"air",
+    "surfaceType":"plane",
+    "point":[-9.75, 0, 0],
+    "normVec":[-1, 0, 0]
+  }
+]
+}
